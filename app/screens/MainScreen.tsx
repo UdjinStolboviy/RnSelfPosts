@@ -4,8 +4,8 @@ import {Post} from '../components/Post';
 import {DATA} from '../data';
 
 export const MaineScreen = ({navigation}) => {
-  const goToPost = () => {
-    return navigation.push('Posts');
+  const openPostHandler = post => {
+    return navigation.push('Posts', {postId: post.id, date: post.date});
   };
 
   return (
@@ -13,7 +13,7 @@ export const MaineScreen = ({navigation}) => {
       <FlatList
         data={DATA}
         keyExtractor={post => post.id.toString()}
-        renderItem={({item}) => <Post post={item} />}
+        renderItem={({item}) => <Post post={item} onOpen={openPostHandler} />}
       />
     </View>
   );

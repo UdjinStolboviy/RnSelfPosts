@@ -14,6 +14,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		83BFE593C7D6EC7CF603654B /* libPods-RnSelfPosts-RnSelfPostsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 034E61A13BA5019AF72E35C4 /* libPods-RnSelfPosts-RnSelfPostsTests.a */; };
 		F9541FEF7769755B4BDAC328 /* libPods-RnSelfPosts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 500779F0A139AA8C6D231BCB /* libPods-RnSelfPosts.a */; settings = {ATTRIBUTES = (Required, ); }; };
+		FA8F929E2721A35B00AD1BEE /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA8F929D2721A35B00AD1BEE /* Ionicons.ttf */; };
 		FA9998372704B7FF00A3DE28 /* libswiftGLKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9998362704B7FF00A3DE28 /* libswiftGLKit.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
 		FA9998392704B86700A3DE28 /* libswiftWebKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9998382704B86700A3DE28 /* libswiftWebKit.tbd */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RnSelfPosts/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F0413BE973FEF144FC179372 /* Pods-RnSelfPosts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RnSelfPosts.debug.xcconfig"; path = "Target Support Files/Pods-RnSelfPosts/Pods-RnSelfPosts.debug.xcconfig"; sourceTree = "<group>"; };
+		FA8F929D2721A35B00AD1BEE /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
 		FA9998362704B7FF00A3DE28 /* libswiftGLKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftGLKit.tbd; path = usr/lib/swift/libswiftGLKit.tbd; sourceTree = SDKROOT; };
 		FA9998382704B86700A3DE28 /* libswiftWebKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftWebKit.tbd; path = usr/lib/swift/libswiftWebKit.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				FA8F929C2721A20E00AD1BEE /* Fonts */,
 				13B07FAE1A68108700A75B9A /* RnSelfPosts */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* RnSelfPostsTests */,
@@ -154,6 +157,14 @@
 				00E356EE1AD99517003FC87E /* RnSelfPostsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		FA8F929C2721A20E00AD1BEE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA8F929D2721A35B00AD1BEE /* Ionicons.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +263,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				FA8F929E2721A35B00AD1BEE /* Ionicons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

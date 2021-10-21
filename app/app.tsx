@@ -6,11 +6,14 @@ import {Screens} from './constants/Screens';
 import {MaineScreen} from './screens/MainScreen';
 import {PostScreen} from './screens/PostScreen';
 import {THEME} from './constants/Theme';
+import {HeaderButtons, Item} from 'react-navigation-header-buttons';
+import {AppHeaderIcon} from './components/AppHeaderIcon';
 
 const Stack = createNativeStackNavigator();
 
-const App = () => {
+const App = props => {
   const [isReady, setIsReady] = useState(false);
+  const [idPost, setIdPost] = useState();
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={Screens.MAINE_SCREEN}>
@@ -48,6 +51,24 @@ const optionPost = {
 const optionMaine = {
   gestureEnabled: false,
   title: 'Мой блог',
+  headerRight: props => (
+    <HeaderButtons HeaderButtonComponent={AppHeaderIcon} {...props}>
+      <Item
+        title="Teke photo"
+        iconName="ios-camera"
+        onPress={() => console.warn('hahahah')}
+      />
+    </HeaderButtons>
+  ),
+  headerLeft: props => (
+    <HeaderButtons HeaderButtonComponent={AppHeaderIcon} {...props}>
+      <Item
+        title="Toggle Drawer"
+        iconName="ios-menu"
+        onPress={() => console.warn('hahahah')}
+      />
+    </HeaderButtons>
+  ),
   headerStyle: {
     backgroundColor: Platform.OS === 'android' ? THEME.MAIN_COLOR : '#fff',
   },
