@@ -8,11 +8,16 @@ import {PostScreen} from './screens/PostScreen';
 import {THEME} from './constants/Theme';
 import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import {AppHeaderIcon} from './components/AppHeaderIcon';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {BookmarkedScreen} from './screens/BookmarkedScreen';
+//import AppNavigation from './navigation/AppNavigation';
+
 
 const Stack = createNativeStackNavigator();
 
+
 const App = props => {
-  const [isReady, setIsReady] = useState(false);
+   const [isReady, setIsReady] = useState(false);
   const [idPost, setIdPost] = useState();
   return (
     <NavigationContainer>
@@ -34,6 +39,19 @@ const App = props => {
       </Stack.Navigator>
     </NavigationContainer>
   );
+ 
+};
+
+const optionBooked = {
+  gestureEnabled: false,
+  title: 'Booked',
+  headerStyle: {
+    backgroundColor: Platform.OS === 'android' ? THEME.MAIN_COLOR : '#fff',
+  },
+  headerTintColor: Platform.OS === 'android' ? '#fff' : THEME.MAIN_COLOR,
+  headerTitleStyle: {
+    fontWeight: 'bold',
+  },
 };
 
 const optionPost = {

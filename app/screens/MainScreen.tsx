@@ -3,9 +3,14 @@ import {View, Text, StyleSheet, Button, FlatList} from 'react-native';
 import {Post} from '../components/Post';
 import {DATA} from '../data';
 
+
 export const MaineScreen = ({navigation}) => {
   const openPostHandler = post => {
-    return navigation.push('Posts', {postId: post.id, date: post.date});
+    return navigation.navigate('Posts', {
+      postId: post.id,
+      date: post.date,
+      booked: post.booked,
+    });
   };
 
   return (
