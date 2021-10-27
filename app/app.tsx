@@ -10,18 +10,42 @@ import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import {AppHeaderIcon} from './components/AppHeaderIcon';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BookmarkedScreen} from './screens/BookmarkedScreen';
+//import {BottomTabBar} from './navigation/MyTabs';
 //import AppNavigation from './navigation/AppNavigation';
 
-
-const Stack = createNativeStackNavigator();
-
-
 const App = props => {
-   const [isReady, setIsReady] = useState(false);
-  const [idPost, setIdPost] = useState();
+  const Stack = createNativeStackNavigator();
+  const Tab = createBottomTabNavigator();
+  const BottomTabBar = () => {
+    return (
+      <Tab.Navigator>
+        <Tab.Screen
+          name={Screens.MAINE_SCREEN}
+          component={MaineScreen}
+          options={{
+            ...optionMaine,
+          }}
+        />
+        <Tab.Screen
+          name={Screens.BOOKED_SCREEN}
+          component={BookmarkedScreen}
+          options={{
+            ...optionBooked,
+          }}
+        />
+      </Tab.Navigator>
+    );
+  };
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName={Screens.MAINE_SCREEN}>
+      <Stack.Navigator>
+        <Stack.Screen
+          name={'Tab'}
+          component={BottomTabBar}
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           name={Screens.MAINE_SCREEN}
           component={MaineScreen}
@@ -29,6 +53,7 @@ const App = props => {
             ...optionMaine,
           }}
         />
+
         <Stack.Screen
           name={Screens.POSTS}
           component={PostScreen}
@@ -39,7 +64,6 @@ const App = props => {
       </Stack.Navigator>
     </NavigationContainer>
   );
- 
 };
 
 const optionBooked = {
@@ -67,7 +91,6 @@ const optionPost = {
 };
 
 const optionMaine = {
-  gestureEnabled: false,
   title: 'Мой блог',
   headerRight: props => (
     <HeaderButtons HeaderButtonComponent={AppHeaderIcon} {...props}>
