@@ -10,6 +10,7 @@ import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import {AppHeaderIcon} from './components/AppHeaderIcon';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {BookmarkedScreen} from './screens/BookmarkedScreen';
+import Icon from 'react-native-ionicons';
 //import {BottomTabBar} from './navigation/MyTabs';
 //import AppNavigation from './navigation/AppNavigation';
 
@@ -18,7 +19,11 @@ const App = props => {
   const Tab = createBottomTabNavigator();
   const BottomTabBar = () => {
     return (
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={() => ({
+          tabBarActiveTintColor: THEME.MAIN_COLOR,
+          tabBarInactiveTintColor: 'gray',
+        })}>
         <Tab.Screen
           name={Screens.MAINE_SCREEN}
           component={MaineScreen}
@@ -44,6 +49,7 @@ const App = props => {
           component={BottomTabBar}
           options={{
             headerShown: false,
+            ...optionMaine,
           }}
         />
         <Stack.Screen
@@ -75,6 +81,9 @@ const optionBooked = {
   headerTintColor: Platform.OS === 'android' ? '#fff' : THEME.MAIN_COLOR,
   headerTitleStyle: {
     fontWeight: 'bold',
+  },
+  tabBarIcon: () => {
+    return <Icon name="ios-star" />;
   },
 };
 
@@ -110,6 +119,11 @@ const optionMaine = {
       />
     </HeaderButtons>
   ),
+
+  tabBarIcon: () => {
+    return <Icon name="ios-albums" />;
+  },
+
   headerStyle: {
     backgroundColor: Platform.OS === 'android' ? THEME.MAIN_COLOR : '#fff',
   },
